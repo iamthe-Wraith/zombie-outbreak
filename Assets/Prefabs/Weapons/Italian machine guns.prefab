@@ -74,6 +74,8 @@ MonoBehaviour:
   range: 50
   damage: 3
   fireRate: 5
+  ammoType: 1
+  ammo: {fileID: 0}
 --- !u!114 &299809004315041398
 MonoBehaviour:
   m_ObjectHideFlags: 0

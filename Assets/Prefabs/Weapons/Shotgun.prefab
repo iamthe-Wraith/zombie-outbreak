@@ -103,6 +103,8 @@ MonoBehaviour:
   range: 10
   damage: 6
   fireRate: 1
+  ammoType: 2
+  ammo: {fileID: 0}
 --- !u!1 &2822559627143426596
 GameObject:
   m_ObjectHideFlags: 0

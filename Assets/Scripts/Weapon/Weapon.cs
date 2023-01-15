@@ -21,6 +21,12 @@ public class Weapon : MonoBehaviour
     [Tooltip("Fire rate is the number of rounds this weapons can fire per second.")]
     int fireRate = 2;
 
+    [SerializeField]
+    AmmoType ammoType;
+
+    [SerializeField]
+    PlayerAmmo ammo;
+
     private float delayBetweenRounds;
     private bool isFiring = false;
     private ParticleSystem[] muzzleFlashParticles;
@@ -33,7 +39,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {        
-        if (!gameObject.activeInHierarchy || isFiring) return;
+        if (!gameObject.activeInHierarchy || isFiring || ammo.GetCurrentAmmo(ammoType) <= 0) return;
         StartCoroutine(ProcessShoot());
     }
 
@@ -55,6 +61,8 @@ public class Weapon : MonoBehaviour
                 target.TakeDamage(damage, hit);
             }
         }
+
+        ammo.ReduceCurrentAmmo(ammoType);
 
         yield return new WaitForSeconds(delayBetweenRounds);
         isFiring = false;
