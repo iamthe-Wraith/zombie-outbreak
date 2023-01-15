@@ -32,5 +32,7 @@ public class EnemyHealth : MonoBehaviour
         {
             ProcessDeath();
         }
+
+        BroadcastMessage("OnDamageTaken");
     }
 }
