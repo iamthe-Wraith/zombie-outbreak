@@ -52,7 +52,7 @@ public class Weapon : MonoBehaviour
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target)
             {
-                target.TakeDamage(damage);
+                target.TakeDamage(damage, hit);
             }
         }
 

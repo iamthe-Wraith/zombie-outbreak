@@ -18,6 +18,8 @@ namespace StarterAssets
 		public float SprintSpeed = 6.0f;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
+		[Tooltip("Rotation speed of the character when they have weapons zoomed")]
+		public float ZoomRotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
@@ -50,6 +52,7 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+		public bool isZoomed = false;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -137,8 +140,10 @@ namespace StarterAssets
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+				float rotationSpeed = isZoomed ? ZoomRotationSpeed : RotationSpeed;
+
+				_cinemachineTargetPitch += _input.look.y * rotationSpeed * deltaTimeMultiplier;
+				_rotationVelocity = _input.look.x * rotationSpeed * deltaTimeMultiplier;
 
 				// clamp our pitch rotation
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);

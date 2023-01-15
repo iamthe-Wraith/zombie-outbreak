@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7744298594700987668}
   - component: {fileID: 7744298594691384894}
   - component: {fileID: 6432127306652633233}
+  - component: {fileID: 299809004315041398}
   m_Layer: 0
   m_Name: Italian machine guns
   m_TagString: Untagged
@@ -73,6 +74,21 @@ MonoBehaviour:
   range: 50
   damage: 3
   fireRate: 5
+--- !u!114 &299809004315041398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7744298594700642266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735256fc627854e85b0fa07c19f68cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFollowCamera: {fileID: 0}
+  ZoomedOutFOV: 40
+  ZoomedInFOV: 15
 --- !u!1 &7744298594700643642
 GameObject:
   m_ObjectHideFlags: 0
