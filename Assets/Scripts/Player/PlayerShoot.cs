@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField]
-    Weapon[] weapons;
+    GameObject[] weapons;
     
     private StarterAssetsInputs startAssets;
 
@@ -28,8 +28,10 @@ public class PlayerShoot : MonoBehaviour
     {
         if (startAssets.IsDisabled) return;
         
-        foreach (Weapon weapon in weapons)
+        foreach (GameObject weaponObj in weapons)
         {
+            Weapon weapon = weaponObj.GetComponent<Weapon>();
+            if (weapon == null) return;
             weapon.Shoot();
         }
     }

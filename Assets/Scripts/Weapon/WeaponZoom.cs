@@ -17,6 +17,8 @@ public class WeaponZoom : MonoBehaviour
 
     public void SetZoom(bool isZoomed)
     {
+        Debug.Log("setting zoom");
+        
         if (!enabled && isZoomed) return;
 
         _isZoomed = isZoomed;

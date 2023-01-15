@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerZoom : MonoBehaviour
 {
-    public float RotationSpeed = 1.0f;
-    FirstPersonController fpController;
+    [SerializeField]
+    GameObject[] weapons;
 
-    WeaponZoom[] weapons;
+    FirstPersonController fpController;
 
     void OnZoom()
     {
@@ -18,15 +18,21 @@ public class PlayerZoom : MonoBehaviour
     void Start()
     {
         fpController = GetComponent<FirstPersonController>();
-        weapons = GetComponentsInChildren<WeaponZoom>();
     }
 
     private void ToggleZoom()
     {
-        fpController.isZoomed = !fpController.isZoomed;
-        foreach (WeaponZoom weapon in weapons)
+        foreach (GameObject weapon in weapons)
         {
-            weapon.ToggleZoom();
+            if (weapon.activeInHierarchy)
+            {
+                WeaponZoom weaponZoom = weapon.GetComponent<WeaponZoom>();
+                if (weaponZoom != null)
+                {
+                    fpController.isZoomed = !fpController.isZoomed;
+                    weaponZoom.ToggleZoom();
+                }
+            }
         }
     }
 }

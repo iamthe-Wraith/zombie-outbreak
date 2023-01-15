@@ -299,6 +299,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102423272}
   m_CullTransparentMesh: 1
+--- !u!1 &175545217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4779817536439384970, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+  m_PrefabInstance: {fileID: 1374810322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &190996065
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +407,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!1 &267417095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7916984403066024812, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+  m_PrefabInstance: {fileID: 1374810322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &359117335
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +855,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936281066}
   m_CullTransparentMesh: 1
+--- !u!1 &950456724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4431978584985939550, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+  m_PrefabInstance: {fileID: 1374810322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1004249927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1218,6 +1233,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2026049187, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+      propertyPath: weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026049187, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 267417095}
+    - target: {fileID: 2026049187, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 950456724}
+    - target: {fileID: 2026049187, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 175545217}
     - target: {fileID: 1133581319328440597, guid: 2524b1875114948f3802601aac7c7723, type: 3}
       propertyPath: ammo
       value: 
@@ -1226,6 +1257,18 @@ PrefabInstance:
       propertyPath: ammo
       value: 
       objectReference: {fileID: 2026049190}
+    - target: {fileID: 2490171544594590137, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 267417095}
+    - target: {fileID: 2490171544594590137, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 950456724}
+    - target: {fileID: 2490171544594590137, guid: 2524b1875114948f3802601aac7c7723, type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 175545217}
     - target: {fileID: 5291440571536750584, guid: 2524b1875114948f3802601aac7c7723, type: 3}
       propertyPath: m_Name
       value: Player
