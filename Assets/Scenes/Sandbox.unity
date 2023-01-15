@@ -701,85 +701,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 909812994821509160, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -44.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 909812994821509160, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.1890001
-      objectReference: {fileID: 0}
-    - target: {fileID: 909812994821509160, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -68.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 1161130109666760212, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 07404362f58cc4203ac85e0f1a490768, type: 2}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -44.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.814
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -68.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.41980585
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.907614
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745766255175293114, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 229.645
-      objectReference: {fileID: 0}
     - target: {fileID: 5291440571536750584, guid: 2524b1875114948f3802601aac7c7723, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5597105306780633249, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7799534587367455495, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -44.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 7799534587367455495, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.1890001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7799534587367455495, guid: 2524b1875114948f3802601aac7c7723, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -68.23
-      objectReference: {fileID: 0}
     - target: {fileID: 7799534587367455495, guid: 2524b1875114948f3802601aac7c7723, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.41980585
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7799534587367455495, guid: 2524b1875114948f3802601aac7c7723, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7799534587367455495, guid: 2524b1875114948f3802601aac7c7723, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.907614
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8206749957133460840, guid: 2524b1875114948f3802601aac7c7723, type: 3}
       propertyPath: m_RootOrder
