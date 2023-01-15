@@ -16,7 +16,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void ProcessDeath()
     {
-        Destroy(gameObject);
+        isAlive = false;
+        GetComponent<Animator>().SetTrigger("Dead");
     }
 
     public void TakeDamage(float damage, RaycastHit hit)

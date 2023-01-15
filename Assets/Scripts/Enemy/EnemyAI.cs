@@ -20,6 +20,8 @@ public class EnemyAI : MonoBehaviour
     float chaseRange = 10;
 
     private NavMeshAgent navMeshAgent;
+    private EnemyHealth enemyHealth;
+    private CapsuleCollider capsuleCollider;
     private float distanceToTarget = Mathf.Infinity;
     private bool isProvoked = false;
 
@@ -32,10 +34,20 @@ public class EnemyAI : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = speed;
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
+        if (!enemyHealth.IsAlive)
+        {
+            enabled = false;
+            capsuleCollider.enabled = false;
+            navMeshAgent.enabled = false;
+            return;
+        }
+
         distanceToTarget = Vector3.Distance(target.position, transform.position);
 
         if (isProvoked)
@@ -43,9 +55,9 @@ public class EnemyAI : MonoBehaviour
             EngageTarget();
         }
 
-        if (distanceToTarget <= chaseRange)
+        if (!isProvoked && distanceToTarget <= chaseRange)
         {
-            isProvoked = true;   
+            isProvoked = true;
         }
     }
 
@@ -56,11 +68,13 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
-        Debug.Log("attacking!!!");
+        GetComponent<Animator>().SetBool("Attack", true);
     }
 
     private void ChaseTarget()
     {
+        GetComponent<Animator>().SetBool("Attack", false);
+        GetComponent<Animator>().SetTrigger("Move");
         navMeshAgent.SetDestination(target.position);
     }
 

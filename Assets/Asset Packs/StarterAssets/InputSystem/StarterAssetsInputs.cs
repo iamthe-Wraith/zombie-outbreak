@@ -19,8 +19,25 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+		
+		private bool isDisabled = false;
+		public bool IsDisabled { get { return isDisabled; } }
+
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+		public void Disable()
+		{
+			isDisabled = true;
+			SetCursorState(false);
+			BroadcastMessage("CeaseFire");
+		}
+
+		public void Enable()
+		{
+			isDisabled = false;
+			SetCursorState(true);
+		}
+
 		public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
