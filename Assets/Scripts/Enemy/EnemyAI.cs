@@ -12,7 +12,11 @@ public class EnemyAI : MonoBehaviour
     float speed = 3.5f;
 
     [SerializeField]
-    [Tooltip("The max distance the target can be and still be chased by this enemy.")]
+    [Tooltip("How quickly this enemy can turn")]
+    float turnSpeed = 5;
+
+    [SerializeField]
+    [Tooltip("The max distance the target can be and still be chased by this enemy")]
     float chaseRange = 10;
 
     private NavMeshAgent navMeshAgent;
@@ -57,6 +61,8 @@ public class EnemyAI : MonoBehaviour
 
     private void EngageTarget()
     {
+        FaceTarget();
+        
         if (distanceToTarget >= navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
@@ -66,5 +72,12 @@ public class EnemyAI : MonoBehaviour
         {
             AttackTarget();
         }
+    }
+
+    private void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
     }
 }
