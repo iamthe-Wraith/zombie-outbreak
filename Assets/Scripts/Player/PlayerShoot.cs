@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour
 {
-    Weapon[] weapons;
+    private StarterAssetsInputs startAssets;
+    private Weapon[] weapons;
 
     void OnShoot(InputValue value)
     {
@@ -17,11 +19,14 @@ public class PlayerShoot : MonoBehaviour
 
     void Start()
     {
+        startAssets = GetComponent<StarterAssetsInputs>();
         weapons = GetComponentsInChildren<Weapon>();
     }
 
     private void Shoot()
     {
+        if (startAssets.IsDisabled) return;
+        
         foreach (Weapon weapon in weapons)
         {
             weapon.Shoot();

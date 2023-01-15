@@ -29,7 +29,6 @@ namespace StarterAssets
 		{
 			isDisabled = true;
 			SetCursorState(false);
-			BroadcastMessage("CeaseFire");
 		}
 
 		public void Enable()
@@ -40,11 +39,13 @@ namespace StarterAssets
 
 		public void OnMove(InputValue value)
 		{
+			if (isDisabled) return;
 			MoveInput(value.Get<Vector2>());
 		}
 
 		public void OnLook(InputValue value)
 		{
+			if (isDisabled) return;
 			if(cursorInputForLook)
 			{
 				LookInput(value.Get<Vector2>());
@@ -53,11 +54,13 @@ namespace StarterAssets
 
 		public void OnJump(InputValue value)
 		{
+			if (isDisabled) return;
 			JumpInput(value.isPressed);
 		}
 
 		public void OnSprint(InputValue value)
 		{
+			if (isDisabled) return;
 			SprintInput(value.isPressed);
 		}
 #endif

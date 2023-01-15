@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float hitPoints = 100f;
 
     private StarterAssetsInputs _startAssets;
-    // private GameOverMenu _gameOverMenu;
+    private GameOverMenu _gameOverMenu;
     private bool _isAlive = true;
     public bool IsAlive { get { return _isAlive; } }
     private float _startingHitPoints;
@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _startAssets = GetComponent<StarterAssetsInputs>();
-        // _gameOverMenu = GameObject.FindGameObjectWithTag("GameSession").GetComponent<GameOverMenu>();
+        _gameOverMenu = GameObject.FindGameObjectWithTag("GameSession").GetComponent<GameOverMenu>();
         _startingHitPoints = hitPoints;
     }
 
@@ -48,10 +48,10 @@ public class PlayerHealth : MonoBehaviour
 
         SetStarterAssetsActive(_isAlive);
 
-        // if (_gameOverMenu)
-        // {
-        //     _gameOverMenu.Show();
-        // }
+        if (_gameOverMenu)
+        {
+            _gameOverMenu.Show();
+        }
     }
 
     private void SetStarterAssetsActive(bool isActive)
