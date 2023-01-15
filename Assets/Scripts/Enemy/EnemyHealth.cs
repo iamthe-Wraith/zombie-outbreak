@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] float hitPoints = 10f;
+    [SerializeField]
+    float hitPoints = 10f;
     public float HitPoints { get { return hitPoints; } }
+
+    [SerializeField]
+    GameObject hitEffect;
 
     private bool isAlive = true;
     public bool IsAlive { get { return isAlive; } }
@@ -19,7 +23,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (!isAlive) return;
 
-        Debug.Log($"{hit.transform.name} takes {damage} damage");
+        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal), transform);
+        Destroy(impact, 2f);
 
         hitPoints -= damage;
 
